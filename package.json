@@ -1,0 +1,23 @@
+{
+  "name": "null-wheel",
+  "version": "0.0.1",
+  "description": "vue，wheel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nothinginterested/null-ui.git"
+  },
+  "keywords": [
+    "vue",
+    "ui"
+  ],
+  "author": "lzz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nothinginterested/null-ui/issues"
+  },
+  "homepage": "https://github.com/nothinginterested/null-ui#readme"
+}
