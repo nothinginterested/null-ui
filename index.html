@@ -28,29 +28,7 @@
             font-size: var(--font-size);
         }
     </style>
-    <style>
-        .g-button{
-            font-size: var(--font-size);
-            height: var(--button-height);
-            border: 1px solid var(--border-color);
-            background: var(--button-bg);
-            border-radius: var(--border-radius);
-            padding: 0 1em;
 
-
-        }
-        .g-button:hover{
-            border-color: var(--border-color-hover);
-        }
-        .g-button:focus{
-            background: var(--button-active-bg);
-
-        }
-        .g-button:focus{
-            outline: none;
-        }
-
-    </style>
     <title>null</title>
 </head>
 <body>
@@ -58,15 +36,9 @@
     <g-button class="g-button">按钮</g-button>
 
 </div>
-<script src="node_modules/vue/dist/vue.min.js"></script>
-<script src="button.js"></script>
-<script>
-    new Vue({
-        el: '#app',
-        data: {
-            message: "hello"
-        }
-    })
+
+<script src="src/app.js">
+
 </script>
 </body>
 </html>
