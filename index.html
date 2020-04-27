@@ -15,17 +15,22 @@
             --button-height: 32px;
             --font-size: 14px;
             --button-bg: white;
-            --border-color:#999;
+            --border-color: #999;
             --border-radius: 4px;
-            --border-color-hover:#666;
-            --button-active-bg:#eee;
-
+            --border-color-hover: #666;
+            --button-active-bg: #eee;
 
 
         }
-        body{
+
+        body {
             margin: 20px;
             font-size: var(--font-size);
+        }
+
+        .icon {
+            width: 1em;
+            height: 1em;
         }
     </style>
 
@@ -33,12 +38,15 @@
 </head>
 <body>
 <div id="app">
-    <g-button class="g-button">按钮</g-button>
+    <g-button icon="setting">按钮</g-button>
+    <g-button icon="setting">按钮</g-button>
+    <g-button icon="setting" icon-position="right">按钮</g-button>
+    <g-button icon="setting" icon-position="right">按钮</g-button>
 
 </div>
 
 <script src="src/app.js">
-
 </script>
+<script src="//at.alicdn.com/t/font_1783749_noqur2ndws.js"></script>
 </body>
 </html>
