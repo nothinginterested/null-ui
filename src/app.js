@@ -1,9 +1,13 @@
 import Vue from 'vue'
 import Button from './button'
-Vue.component('g-button',Button)
+import Icon from './icon'
+
+Vue.component('g-button', Button)
+Vue.component('g-icon', Icon)
 new Vue({
     el: '#app',
     data: {
-        message: "hello"
+        message: "hello",
+        loading1: false
     }
 })

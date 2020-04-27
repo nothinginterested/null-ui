@@ -1,8 +1,7 @@
 <template>
-    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
-        <svg class="icon">
-            <use :xlink:href="`#icon-${icon}`"></use>
-        </svg>
+    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
+        <g-icon :name="icon" class="icon" v-if="icon&&!loading"></g-icon>
+        <g-icon name="loading" class="loading icon" v-if="loading"></g-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -20,12 +19,26 @@
                     return value !== 'left' && value !== 'right' ? false : true;
                     //  属性的检查器，检查通过pros传值的正确性
                 }
+            },
+            loading: {
+                type: Boolean,
+                default: false
             }
 
         }
     }
 </script>
 <style lang="scss">
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+
     .g-button {
         vertical-align: top;
         font-size: var(--font-size);
@@ -42,7 +55,7 @@
             border-color: var(--border-color-hover);
         }
 
-        &:focus {
+        &:active {
             background: var(--button-active-bg);
 
         }
@@ -70,6 +83,10 @@
             > .content {
                 order: 1;
             }
+        }
+
+        .loading {
+            animation: spin 1s infinite linear;
         }
 
     }
