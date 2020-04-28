@@ -39,7 +39,7 @@
 <body>
 <div id="app">
     <g-button icon="setting" :loading="loading1" @click="loading1=!loading1" icon-position="right">按钮</g-button>
-    <g-button icon="setting" loading="true">按钮</g-button>
+    <g-button icon="setting" :loading="true">按钮</g-button>
     <g-button icon="setting" icon-position="right">按钮</g-button>
     <g-button-group>
         <div>
@@ -48,11 +48,16 @@
         <g-button>更多</g-button>
         <g-button icon="right" icon-position="right">下一页</g-button>
     </g-button-group>
-    <div id="test"></div>
+    <div style="margin: 20px">
+        <g-input></g-input>
+        <g-input disabled value="梁璐"></g-input>
+        <g-input readonly value="梁兆璋"></g-input>
+        <g-input error="出错了"></g-input>
+    </div>
 </div>
 
 <script src="src/app.js">
 </script>
-<script src="//at.alicdn.com/t/font_1783749_hceo0bddajl.js"></script>
+<script src="//at.alicdn.com/t/font_1783749_9iie61gf7ue.js"></script>
 </body>
 </html>
