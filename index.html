@@ -49,7 +49,10 @@
         <g-button icon="right" icon-position="right">下一页</g-button>
     </g-button-group>
     <div style="margin: 20px">
-        <g-input></g-input>
+        <g-input v-model="message"></g-input>
+        <div>
+            {{message}}
+        </div>
         <g-input disabled value="梁璐"></g-input>
         <g-input readonly value="梁兆璋"></g-input>
         <g-input error="出错了"></g-input>
