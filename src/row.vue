@@ -12,7 +12,6 @@
             }
         },
         mounted() {
-            console.log(this.$children);
             this.$children.forEach((vm) => {
                 vm.nLength = this.nLength
             })

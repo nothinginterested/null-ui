@@ -38,51 +38,56 @@
 </head>
 <body>
 <div id="app">
-    <div style="border: 1px solid black;">
-        <g-row n-length="20">
-            <g-col span="8" :phone="{span:20}"
-                   :ipad="{span:18}" :narrow-pc="{span:16}" :pc="{span:14}">2
-            </g-col>
-            <g-col span="2" :phone="{span:2}"
-                   :ipad="{span:3}" :narrow-pc="{span:4}" :pc="{span:5}">2
-            </g-col>
-            <g-col span="12" :phone="{span:2}"
-                   :ipad="{span:3}" :narrow-pc="{span:4}" :pc="{span:5}">2
-            </g-col>
-        </g-row>
-        <!--        <g-row n-length="20">-->
-        <!--            <g-col span="8">1</g-col>-->
-        <!--            <g-col span="8">2</g-col>-->
-        <!--            <g-col span="8">2</g-col>-->
-        <!--        </g-row>-->
-        <!--        <g-row n-length="20">-->
-        <!--            <g-col span="10">1</g-col>-->
-        <!--            <g-col span="10">2</g-col>-->
-        <!--            <g-col span="4">2</g-col>-->
-        <!--        </g-row>-->
 
-
+    <div class="toast" style="margin: 20px">
+        <g-button @click="showToast">展示Toast</g-button>
     </div>
 
-    <g-button icon="setting" :loading="loading1" @click="loading1=!loading1" icon-position="right">按钮</g-button>
-    <g-button icon="setting" :loading="true">按钮</g-button>
-    <g-button icon="setting" icon-position="right">按钮</g-button>
-    <g-button-group>
-        <div>
-            <g-button icon="left">上一页</g-button>
-        </div>
-        <g-button>更多</g-button>
-        <g-button icon="right" icon-position="right">下一页</g-button>
-    </g-button-group>
-    <div style="margin: 20px">
-        <g-input v-model="message"></g-input>
-        <div>
-            {{message}}
-        </div>
-        <g-input disabled value="梁璐"></g-input>
-        <g-input readonly value="梁兆璋"></g-input>
-        <g-input error="出错了"></g-input>
-    </div>
+    <!--    <div style="border: 1px solid black;">-->
+    <!--        <g-row n-length="20">-->
+    <!--            <g-col span="8" :phone="{span:20}"-->
+    <!--                   :ipad="{span:18}" :narrow-pc="{span:16}" :pc="{span:14}">2-->
+    <!--            </g-col>-->
+    <!--            <g-col span="2" :phone="{span:2}"-->
+    <!--                   :ipad="{span:3}" :narrow-pc="{span:4}" :pc="{span:5}">2-->
+    <!--            </g-col>-->
+    <!--            <g-col span="12"-->
+    <!--                   :ipad="{span:3}" :narrow-pc="{span:4}" :pc="{span:5}">2-->
+    <!--            </g-col>-->
+    <!--        </g-row>-->
+    <!--        &lt;!&ndash;        <g-row n-length="20">&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <g-col span="8">1</g-col>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <g-col span="8">2</g-col>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <g-col span="8">2</g-col>&ndash;&gt;-->
+    <!--        &lt;!&ndash;        </g-row>&ndash;&gt;-->
+    <!--        &lt;!&ndash;        <g-row n-length="20">&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <g-col span="10">1</g-col>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <g-col span="10">2</g-col>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <g-col span="4">2</g-col>&ndash;&gt;-->
+    <!--        &lt;!&ndash;        </g-row>&ndash;&gt;-->
+
+
+    <!--    </div>-->
+
+    <!--    <g-button icon="setting" :loading="loading1" @click="loading1=!loading1" icon-position="right">按钮</g-button>-->
+    <!--    <g-button icon="setting" :loading="true">按钮</g-button>-->
+    <!--    <g-button icon="setting" icon-position="right">按钮</g-button>-->
+    <!--    <g-button-group>-->
+    <!--        <div>-->
+    <!--            <g-button icon="left">上一页</g-button>-->
+    <!--        </div>-->
+    <!--        <g-button>更多</g-button>-->
+    <!--        <g-button icon="right" icon-position="right">下一页</g-button>-->
+    <!--    </g-button-group>-->
+    <!--    <div style="margin: 20px">-->
+    <!--        <g-input v-model="message"></g-input>-->
+    <!--        <div>-->
+    <!--            {{message}}-->
+    <!--        </div>-->
+    <!--        <g-input disabled value="梁璐"></g-input>-->
+    <!--        <g-input readonly value="梁兆璋"></g-input>-->
+    <!--        <g-input error="出错了"></g-input>-->
+    <!--    </div>-->
 </div>
 
 <script src="src/app.js">

@@ -11,7 +11,6 @@
         mounted() {
             // console.log(this.$el);
             for (let node of this.$el.children) {
-                console.log(node.nodeName);
                 if (node.nodeName === 'DIV') {
                     console.warn('你应该只使用g-button元素')
                 }
