@@ -1,23 +1,68 @@
 <template>
-    <div class="toast">
+    <div class="toast" ref="toast">
         <slot></slot>
+        <div class="line" ref="line"></div>
+        <span class="close" v-if="closeButton" @click="onClickClose">
+            {{closeButton.text}}
+        </span>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'nullToast'
+        name: 'nullToast',
+        props: {
+            autoClose: {
+                type: Boolean,
+                default: true
+            },
+            closeButton: {
+                type: Object,
+                default() {
+                    return {
+                        text: 'lllll',
+                        callback: () => {
+                            console.log('回调成功');
+                        }
+                    }
+                }
+            },
+            autoCloseDelay: {
+                type: Number,
+                default: 5
+            }
+        },
+        methods: {
+            close() {
+                this.$el.remove()
+                this.$destroy()
+            },
+            onClickClose() {
+                this.close()
+                this.closeButton.callback()
+            }
+        },
+        mounted() {
+            if (this.autoClose) {
+                setTimeout(() => {
+                    this.close()
+                }, this.autoCloseDelay * 1000)
+            }
+            this.$nextTick(() => {
+                this.$refs.line.style.height = this.$refs.toast.getBoundingClientRect().height + 'px'
+            })
+        }
     }
 </script>
 
 
 <style lang="scss" scoped>
     $font-size: 14px;
-    $toast-height: 40px;
+    $toast-min-height: 40px;
     $toast-bg: rgba(0, 0, 0, 0.75);
     .toast {
         font-size: $font-size;
-        height: $toast-height;
+        min-height: $toast-min-height;
         line-height: 1.8;
         background: $toast-bg;
         color: white;
@@ -33,4 +78,17 @@
 
     }
 
+    .line {
+        height: 100%;
+        border-left: 1px solid #666;
+        margin-left: 16px;
+
+    }
+
+    .close {
+        font-size: $font-size;
+        padding-left: 16px;
+        flex-shrink: 0;
+
+    }
 </style>

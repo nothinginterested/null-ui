@@ -3,14 +3,18 @@ import Toast from './toast'
 export default {
 
     install(vm, option) {
-        vm.prototype.$toast = function (message) {
+        vm.prototype.$toast = function (message, propsCloseButton) {
             let Constructor = vm.extend(Toast)
-            let toast = new Constructor()
+            let toast = new Constructor(
+                {
+                    propsData: {
+                        closeButton: propsCloseButton.closeButton
+                    }
+                }
+            )
             toast.$slots.default = [message]
-            console.log(toast.$slots.default);
             toast.$mount()
             document.body.appendChild(toast.$el)
-            console.log(toast.$el);
         }
     }
 

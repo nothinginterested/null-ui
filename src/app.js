@@ -6,7 +6,7 @@ import Input from './input'
 import Row from './row'
 import Col from './col'
 import Plugin from './plugin'
-Vue.component('g-button', Button)
+Vue.component('g-button', Button);
 Vue.component('g-icon', Icon)
 Vue.component('g-button-group', ButtonGroup)
 Vue.component('g-input', Input)
@@ -25,7 +25,14 @@ new Vue({
     methods: {
         showToast() {
 
-            this.$toast('lalal')
+            this.$toast('知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了wan', {
+                closeButton: {
+                    text: '知道了知道',
+                    callback: () => {
+                        console.log('发生回调');
+                    }
+                }
+            })
         }
     }
 
