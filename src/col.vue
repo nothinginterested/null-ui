@@ -1,6 +1,9 @@
 <template>
-    <div class="col " :class="[`col-${span}`,offset&&`offset-${offset}`]">
-        <slot></slot>
+    <div class="col " :class=colClass
+         :style=colStyle>
+        <div style="border: 1px solid green">
+            <slot></slot>
+        </div>
     </div>
 </template>
 
@@ -14,7 +17,23 @@
                 type: [String, Number]
             }
 
+        },
+        data() {
+            return {
+                nLength: 0
+            }
+        },
+        computed: {
+            colClass() {
+                let {span, offset} = this
+                return [span && `col-${span}`, offset && `offset-${offset}`]
+            },
+            colStyle() {
+                let {nLength} = this
+                return {paddingLeft: nLength / 2 + 'px', paddingRight: nLength / 2 + 'px'}
+            }
         }
+
     }
 
 </script>
@@ -24,10 +43,7 @@
         height: 100px;
         width: 50%;
         height: 70px;
-        background: green;
-        border: 1px solid red;
-
-
+        padding: 0 10px;
         $class: col-;
         @for $n from 1 through 24 {
             &.#{$class}#{$n} {
