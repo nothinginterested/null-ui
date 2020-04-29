@@ -15,7 +15,22 @@
             },
             offset: {
                 type: [String, Number]
+            },
+            phone: {
+                type: Object,
+
+            },
+            ipad: {
+                type: Object
+            },
+            narrowPc: {
+                type: Object
+
+            },
+            Pc: {
+                type: Object
             }
+
 
         },
         data() {
@@ -25,8 +40,13 @@
         },
         computed: {
             colClass() {
-                let {span, offset} = this
-                return [span && `col-${span}`, offset && `offset-${offset}`]
+                let {span, offset, phone, narrowPc, ipad, Pc} = this
+                return [span && `col-${span}`,
+                    offset && `offset-${offset}`,
+                    ...[(phone && `col-phone-${phone.span}`)],
+                    ...[(ipad && `col-ipad-${ipad.span}`)],
+                    ...[(narrowPc && `col-narrow-pc-${narrowPc.span}`)],
+                    ...[(Pc && `col-pc-${Pc.span}`)]]
             },
             colStyle() {
                 let {nLength} = this
@@ -56,7 +76,50 @@
                 margin-left: ($n/24)*100%;
             }
         }
-
+        /*   Phone */
+        @media (max-width: 576px) {
+            $class: col-phone-;
+            @for $n from 1 through 24 {
+                &.#{$class}#{$n} {
+                    width: ($n/24)*100%;
+                }
+            }
+        }
+        /*ipad*/
+        @media (max-width: 768px) and (min-width: 577px) {
+            $class: col-ipad-;
+            @for $n from 1 through 24 {
+                &.#{$class}#{$n} {
+                    width: ($n/24)*100%;
+                }
+            }
+        }
+        /*   narrow-pc */
+        @media (max-width: 992px) and (min-width: 769px) {
+            $class: col-narrow-pc-;
+            @for $n from 1 through 24 {
+                &.#{$class}#{$n} {
+                    width: ($n/24)*100%;
+                }
+            }
+        }
+        /*PC    */
+        @media (max-width: 1200px) and (min-width: 993px) {
+            $class: col-pc-;
+            @for $n from 1 through 24 {
+                &.#{$class}#{$n} {
+                    width: ($n/24)*100%;
+                }
+            }
+        }
+        @media (min-width: 1201px) {
+            $class: col-wide-pc-;
+            @for $n from 1 through 24 {
+                &.#{$class}#{$n} {
+                    width: ($n/24)*100%;
+                }
+            }
+        }
 
     }
 
