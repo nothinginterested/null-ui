@@ -38,6 +38,20 @@
 </head>
 <body>
 <div id="app">
+
+    <g-row>
+        <g-col>1</g-col>
+        <g-col span="8">2</g-col>
+        <g-col span="2">2</g-col>
+        <g-col span="12">2</g-col>
+    </g-row>
+    <g-row>
+        <g-col span="8">1</g-col>
+        <g-col span="8">2</g-col>
+        <g-col span="4" offset="4">2</g-col>
+    </g-row>
+
+
     <g-button icon="setting" :loading="loading1" @click="loading1=!loading1" icon-position="right">按钮</g-button>
     <g-button icon="setting" :loading="true">按钮</g-button>
     <g-button icon="setting" icon-position="right">按钮</g-button>
