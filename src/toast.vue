@@ -88,6 +88,27 @@
 
     }
 
+    @keyframes slide-down {
+        0% {
+            opacity: 0;
+            transform: translateY(-100%);
+
+        }
+        100% {
+            opacity: 100%;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
     .wrapper {
         position: fixed;
 
@@ -96,16 +117,28 @@
 
         &.position-top {
             top: 0;
+
+            .toast {
+                animation: slide-down .5s;
+            }
         }
 
         &.position-middle {
             top: 50%;
             transform: translateY(-50%) translateX(-50%);
 
+            .toast {
+                animation: fade-in 300ms;
+            }
         }
 
         &.position-bottom {
             bottom: 0;
+
+            .toast {
+                animation: slide-up .5s;
+
+            }
         }
     }
 
@@ -120,7 +153,6 @@
         display: flex;
         align-items: center;
         padding: 0 20px;
-        animation: slide-up .5s;
 
 
     }

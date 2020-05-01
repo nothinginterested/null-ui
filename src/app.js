@@ -12,7 +12,7 @@ Vue.component('g-button-group', ButtonGroup)
 Vue.component('g-input', Input)
 Vue.component('g-row', Row)
 Vue.component('g-col', Col)
-Vue.use(Plugin)
+Vue.use(Plugin);
 new Vue({
     el: '#app',
     data: {
@@ -23,7 +23,13 @@ new Vue({
 
     },
     methods: {
-        showToast() {
+        showToast1() {
+            this.showToast('middle')
+        },
+        showToast2() {
+            this.showToast('bottom')
+        },
+        showToast(pos) {
             console.log('lala');
             this.$toast('知道了知道了', {
                 closeButton: {
@@ -32,7 +38,7 @@ new Vue({
                         console.log('发生回调');
                     },
 
-                }, position: 'top',
+                }, position: pos,
                 autoClose: false
             })
         }
