@@ -24,14 +24,16 @@ new Vue({
     },
     methods: {
         showToast() {
-
-            this.$toast('知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了知道了wan', {
+            console.log('lala');
+            this.$toast('知道了知道了', {
                 closeButton: {
                     text: '知道了知道',
                     callback: () => {
                         console.log('发生回调');
-                    }
-                }
+                    },
+
+                }, position: 'top',
+                autoClose: false
             })
         }
     }

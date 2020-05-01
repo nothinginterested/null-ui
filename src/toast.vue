@@ -1,10 +1,12 @@
 <template>
-    <div class="toast" ref="toast">
-        <slot></slot>
-        <div class="line" ref="line"></div>
-        <span class="close" v-if="closeButton" @click="onClickClose">
+    <div class="wrapper" :class="toastClasses">
+        <div class="toast" ref="toast">
+            <slot></slot>
+            <div class="line" ref="line"></div>
+            <span class="close" v-if="closeButton" @click="onClickClose">
             {{closeButton.text}}
         </span>
+        </div>
     </div>
 </template>
 
@@ -30,6 +32,20 @@
             autoCloseDelay: {
                 type: Number,
                 default: 5
+            },
+            position: {
+                type: String,
+                default: 'top',
+                validate(value) {
+                    return ['top', 'middle', 'bottom'].indexOf(value)
+                }
+            }
+        },
+        computed: {
+            toastClasses() {
+                return {
+                    [`position-${this.position}`]: true
+                }
             }
         },
         methods: {
@@ -60,6 +76,39 @@
     $font-size: 14px;
     $toast-min-height: 40px;
     $toast-bg: rgba(0, 0, 0, 0.75);
+    @keyframes slide-up {
+        0% {
+            transform: translateY(100%);
+            opacity: 0%;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 100%;
+        }
+
+    }
+
+    .wrapper {
+        position: fixed;
+
+        left: 50%;
+        transform: translateX(-50%);
+
+        &.position-top {
+            top: 0;
+        }
+
+        &.position-middle {
+            top: 50%;
+            transform: translateY(-50%) translateX(-50%);
+
+        }
+
+        &.position-bottom {
+            bottom: 0;
+        }
+    }
+
     .toast {
         font-size: $font-size;
         min-height: $toast-min-height;
@@ -68,13 +117,11 @@
         color: white;
         border-radius: 4px;
         box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.50);
-        position: fixed;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
         display: flex;
         align-items: center;
         padding: 0 20px;
+        animation: slide-up .5s;
+
 
     }
 
@@ -91,4 +138,5 @@
         flex-shrink: 0;
 
     }
+
 </style>
