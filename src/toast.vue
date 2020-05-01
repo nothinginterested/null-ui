@@ -120,6 +120,8 @@
 
             .toast {
                 animation: slide-down .5s;
+                border-top-right-radius: 0;
+                border-top-left-radius: 0;
             }
         }
 
@@ -137,7 +139,8 @@
 
             .toast {
                 animation: slide-up .5s;
-
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
             }
         }
     }
