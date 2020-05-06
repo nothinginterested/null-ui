@@ -15,7 +15,6 @@
             this.eventBus.$on('update:selected', (name) => {
                 if (name === this.name) {
                     this.active = true
-                    console.log('hi');
 
                 } else {
 

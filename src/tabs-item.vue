@@ -28,6 +28,7 @@
         },
         mounted() {
             this.eventBus.$on('update:selected', (name) => {
+                // console.log(name);
                 this.active = name === this.name ? true : false;
 
             })
@@ -50,18 +51,19 @@
 
 
 <style scoped lang="scss">
+    $color: blue;
     .tabsItem {
         flex-shrink: 0;
         padding: 0 2em;
         cursor: pointer;
-        border: 1px solid green;
         align-items: center;
         height: 100%;
         display: flex;
-        height: ;
+        height: 100%;
 
         &.active {
-            background: red;
+            color: $color;
+            font-weight: bold;
         }
     }
 

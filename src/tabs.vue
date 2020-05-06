@@ -34,8 +34,21 @@
                 eventBus: this.eventBus
             }
         },
-        created() {
-            console.log(this);
+        mounted() {
+            this.$children.forEach((vm) => {
+                if (vm.$options.name === 'g-tabs-head') {
+                    vm.$children.forEach((item) => {
+                        if (item.$options.name === 'g-tabs-item' && item.name === this.selected) {
+                            console.log(item.$el);
+                            this.eventBus.$emit('update:selected', this.selected, item)
+
+
+                        }
+                    })
+                }
+            })
+
+
         }
     }
 

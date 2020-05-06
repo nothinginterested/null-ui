@@ -16,8 +16,8 @@
     export default {
         inject: ['eventBus'],
         created() {
-            console.log('爷爷给爸爸的');
-            console.log(this.eventBus);
+            // console.log('爷爷给爸爸的');
+            // console.log(this.eventBus);
         }
     }
 
