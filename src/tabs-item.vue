@@ -1,5 +1,5 @@
 <template>
-    <div class="tabsItem">
+    <div class="tabsItem" @click="xxx" :class="classes">
         <slot>
 
         </slot>
@@ -14,6 +14,34 @@
             disabled: {
                 default: false,
                 type: Boolean
+            },
+            name: {
+                type: String | Number,
+                required: true
+            }
+        },
+        inject: ['eventBus'],
+        methods: {
+            xxx() {
+                this.eventBus.$emit('update:selected', this.name)
+            }
+        },
+        mounted() {
+            this.eventBus.$on('update:selected', (name) => {
+                this.active = name === this.name ? true : false;
+
+            })
+        },
+        data() {
+            return {
+                active: false
+            }
+        },
+        computed: {
+            classes() {
+                return {
+                    active: this.active
+                }
             }
         }
     }
@@ -21,7 +49,20 @@
 </script>
 
 
-<style>
+<style scoped lang="scss">
+    .tabsItem {
+        flex-shrink: 0;
+        padding: 0 2em;
+        cursor: pointer;
+        border: 1px solid green;
+        align-items: center;
+        height: 100%;
+        display: flex;
+        height: ;
 
+        &.active {
+            background: red;
+        }
+    }
 
 </style>

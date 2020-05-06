@@ -1,5 +1,5 @@
 <template>
-    <div class="tabsPane">
+    <div class="tabsPane" :class="classes" v-if="active">
         <slot>
 
         </slot>
@@ -9,12 +9,51 @@
 </template>
 
 <script>
-    export default {}
+    export default {
+        inject: ['eventBus'],
+        mounted() {
+            this.eventBus.$on('update:selected', (name) => {
+                if (name === this.name) {
+                    this.active = true
+                    console.log('hi');
+
+                } else {
+
+                    this.active = false
+                }
+            })
+
+
+        },
+        data() {
+            return {
+                active: false
+            }
+        },
+        computed: {
+            classes() {
+                return {
+                    active: this.active
+                }
+            }
+        },
+        props: {
+            name: {
+                type: String | Number,
+
+            }
+        }
+
+    }
 
 </script>
 
 
-<style>
-
+<style lang="scss" scoped>
+    .tabsPane {
+        &.active {
+            background: red;
+        }
+    }
 
 </style>

@@ -29,7 +29,8 @@ new Vue({
     el: '#app',
     data: {
         message: "hello",
-        loading1: false
+        loading1: false,
+        selectedTab: 'woman'
     },
     mounted() {
 
