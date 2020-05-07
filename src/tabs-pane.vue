@@ -50,8 +50,9 @@
 
 <style lang="scss" scoped>
     .tabsPane {
+        padding: 0 1em;
+
         &.active {
-            background: red;
         }
     }
 
