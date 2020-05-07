@@ -25,11 +25,8 @@
                 let {width} = vm.$el.getBoundingClientRect()
                 let left = vm.$el.offsetLeft
 
-                console.log(vm.$el.offsetLeft);
-                console.log(left);
-                console.log(width);
                 this.$refs.line.style.width = `${width}px`
-                this.$refs.line.style.transform = `translateX(${left}px)`
+                this.$refs.line.style.left = `${left}px`
 
             })
         }
