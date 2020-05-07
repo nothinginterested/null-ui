@@ -30,7 +30,7 @@ new Vue({
     data: {
         message: "hello",
         loading1: false,
-        selectedTab: 'woman'
+        selectedTab: 'man'
     },
     mounted() {
 

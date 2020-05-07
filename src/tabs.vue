@@ -36,10 +36,10 @@
         },
         mounted() {
             this.$children.forEach((vm) => {
-                if (vm.$options.name === 'g-tabs-head') {
+                if (vm.$options.name === 'NullTabsHead') {
                     vm.$children.forEach((item) => {
+                        // console.log(this.selected);
                         if (item.$options.name === 'g-tabs-item' && item.name === this.selected) {
-                            console.log(item.$el);
                             this.eventBus.$emit('update:selected', this.selected, item)
 
 
