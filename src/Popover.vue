@@ -1,6 +1,6 @@
 <template>
-    <div class="Popover" @click="xxx">
-        <div class="content-wrapper" v-if="Visible">
+    <div class="Popover" @click.stop="xxx">
+        <div class="content-wrapper" v-if="Visible" @click.stop>
             <slot name="content"></slot>
         </div>
         <slot>
@@ -23,6 +23,25 @@
         methods: {
             xxx() {
                 this.Visible = !this.Visible
+                console.log('切换visible');
+                if (this.Visible === true) {
+                    setTimeout(() => {
+
+                        let EventHandle = () => {
+                            console.log('点击body关闭了');
+                            if (this.Visible === true) {
+                                this.Visible = false
+                            }
+
+                            document.removeEventListener('click', EventHandle)
+                            console.log('docu删除监听器了');
+                        }
+                        document.addEventListener('click', EventHandle)
+
+                    }, 1000)
+                } else {
+                    console.log('vm delete');
+                }
             }
         }
     }
