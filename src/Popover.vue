@@ -1,12 +1,13 @@
 <template>
     <div class="Popover" @click.stop="xxx">
-        <div class="content-wrapper" v-if="Visible" @click.stop>
+        <div class="content-wrapper" v-if="Visible" @click.stop ref="Content">
             <slot name="content"></slot>
         </div>
+        <span ref="Trigger">
         <slot>
 
         </slot>
-
+</span>
     </div>
 
 
@@ -23,9 +24,14 @@
         methods: {
             xxx() {
                 this.Visible = !this.Visible
-                console.log('切换visible');
                 if (this.Visible === true) {
-                    setTimeout(() => {
+
+                    this.$nextTick(() => {
+                        let {height, width, left, top} = this.$refs.Trigger.getBoundingClientRect()
+                        console.log(height, width, left, top);
+                        document.body.appendChild(this.$refs.Content)
+                        this.$refs.Content.style.left = left + window.scrollX + 'px'
+                        this.$refs.Content.style.top = top + window.scrollY + 'px'
 
                         let EventHandle = () => {
                             console.log('点击body关闭了');
@@ -53,12 +59,14 @@
         position: relative;
         vertical-align: top;
 
-        .content-wrapper {
-            position: absolute;
-            bottom: 100%;
-            left: 0;
-            border: 1px solid red;
 
-        }
     }
+
+    .content-wrapper {
+        position: absolute;
+        transform: translateY(-100%);
+        border: 1px solid red;
+    }
+
+
 </style>
