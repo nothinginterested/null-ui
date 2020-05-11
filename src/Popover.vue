@@ -33,6 +33,36 @@
 
         },
         methods: {
+            onPosition() {
+
+
+                const {left, top, height, width} = this.$refs.Trigger.getBoundingClientRect()
+                document.body.appendChild(this.$refs.Content)
+                const {width: width2, height: height2} = this.$refs.Content.getBoundingClientRect()
+                const pos = {
+                    top: {
+                        left: left + window.scrollX,
+                        top: top + window.scrollY
+                    },
+                    bottom: {
+                        left: left + window.scrollX,
+                        top: top + window.scrollY + height
+                    },
+                    left: {
+                        left: left + window.scrollX - width2,
+                        top: top + window.scrollY + (height - height2) / 2
+                    },
+                    right: {
+                        left: left + window.scrollX + width,
+                        top: top + window.scrollY + (height - height2) / 2
+                    }
+
+
+                }
+                this.$refs.Content.style.left = pos[this.position].left + 'px'
+                this.$refs.Content.style.top = pos[this.position].top + 'px'
+
+            },
             Onclick(event) {
 
                 if (this.$refs.Trigger.contains(event.target)) {
@@ -40,33 +70,10 @@
                     this.Visible = !this.Visible
                     if (this.Visible === true) {
                         this.$nextTick(() => {
-                            let {left, top, height, width} = this.$refs.Trigger.getBoundingClientRect()
-                            if (this.position === 'top') {
-                                document.body.appendChild(this.$refs.Content)
-                                this.$refs.Content.style.left = left + window.scrollX + 'px'
-                                this.$refs.Content.style.top = top + window.scrollY + 'px'
-                            } else if (this.position === 'bottom') {
-                                document.body.appendChild(this.$refs.Content)
-                                this.$refs.Content.style.left = left + window.scrollX + 'px'
-                                this.$refs.Content.style.top = top + window.scrollY + height + 'px'
-                            } else if (this.position === 'left') {
-                                document.body.appendChild(this.$refs.Content)
-                                let {width, height: height2} = this.$refs.Content.getBoundingClientRect()
 
-                                this.$refs.Content.style.left = left + window.scrollX - width + 'px'
-                                this.$refs.Content.style.top = top + window.scrollY + (height - height2) / 2 + 'px'
-                            } else if (this.position === 'right') {
-                                document.body.appendChild(this.$refs.Content)
-                                let {height: height2} = this.$refs.Content.getBoundingClientRect()
-                                this.$refs.Content.style.left = left + window.scrollX + width + 'px'
-                                this.$refs.Content.style.top = top + window.scrollY + (height - height2) / 2 + 'px'
-
-
-                            }
-
+                            this.onPosition()
 
                             let EventHandle = (e) => {
-                                console.log(this.$refs);
                                 if (this.$refs.Trigger.contains(e.target) || (this.$refs.Content && this.$refs.Content.contains(e.target))) {
                                     // 一个bug 点击另外一个Popover组件会使得前一个Popover消失，不能共存 解决方法
                                     return
