@@ -34,6 +34,13 @@
     }
 </script>
 <style lang="scss">
+    $--button-height: 32px;
+    $--font-size: 14px;
+    $--button-bg: white;
+    $--border-color: #999;
+    $--border-radius: 4px;
+    $--border-color-hover: #666;
+    $--button-active-bg: #eee;
     @keyframes spin {
         0% {
             transform: rotate(0deg);
@@ -43,25 +50,24 @@
         }
     }
 
-
     .g-button {
         vertical-align: top;
-        font-size: var(--font-size);
-        height: var(--button-height);
-        border: 1px solid var(--border-color);
-        background: var(--button-bg);
-        border-radius: var(--border-radius);
+        font-size: $--font-size;
+        height: $--button-height;
+        border: 1px solid $--border-color;
+        background: $--button-bg;
+        border-radius: $--border-radius;
         padding: 0 1.1em;
         display: inline-flex;
         justify-content: center;
         align-items: center;
 
         &:hover {
-            border-color: var(--border-color-hover);
+            border-color: $--border-color-hover;
         }
 
         &:active {
-            background: var(--button-active-bg);
+            background: $--button-active-bg;
 
         }
 
@@ -93,7 +99,6 @@
         .loading {
             animation: spin 1s infinite linear;
         }
-
     }
 
 </style>

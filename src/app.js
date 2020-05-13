@@ -36,7 +36,8 @@ new Vue({
         message: "hello",
         loading1: false,
         selectedTab: 'man',
-        selected: '1'
+        selected: '1',
+        single: true
     },
     mounted() {
 

@@ -40,6 +40,8 @@
 <body>
 <div id="app">
 
+
+    <g-button icon="error" icon-position="right" disabled>fuck</g-button>
     <div class="toast" style="margin: 20px">
         <g-button @click="showToast">展示Toast</g-button>
     </div>
@@ -107,7 +109,7 @@
         </g-popover>
     </div>
 
-    <g-collapse :selected.sync="selected">
+    <g-collapse :selected.sync="selected" single>
         <g-collapse-item title="标题一" name="1">内容一</g-collapse-item>
         <g-collapse-item title="标题二" name="2">内容二</g-collapse-item>
         <g-collapse-item title="标题三" name="3">内容三</g-collapse-item>
@@ -141,29 +143,31 @@
 
     <!--    </div>-->
 
-    <!--    <g-button icon="setting" :loading="loading1" @click="loading1=!loading1" icon-position="right">按钮</g-button>-->
-    <!--    <g-button icon="setting" :loading="true">按钮</g-button>-->
-    <!--    <g-button icon="setting" icon-position="right">按钮</g-button>-->
-    <!--    <g-button-group>-->
-    <!--        <div>-->
-    <!--            <g-button icon="left">上一页</g-button>-->
-    <!--        </div>-->
-    <!--        <g-button>更多</g-button>-->
-    <!--        <g-button icon="right" icon-position="right">下一页</g-button>-->
-    <!--    </g-button-group>-->
-    <!--    <div style="margin: 20px">-->
-    <!--        <g-input v-model="message"></g-input>-->
-    <!--        <div>-->
-    <!--            {{message}}-->
-    <!--        </div>-->
-    <!--        <g-input disabled value="梁璐"></g-input>-->
-    <!--        <g-input readonly value="梁兆璋"></g-input>-->
-    <!--        <g-input error="出错了"></g-input>-->
-    <!--    </div>-->
+    <g-button icon="setting" :loading="loading1" @click="loading1=!loading1" icon-position="right">按钮</g-button>
+    <g-button icon="setting" :loading="true">按钮</g-button>
+    <g-button icon="setting" icon-position="right">按钮</g-button>
+    <g-button-group>
+        <div>
+            <g-button icon="left">上一页</g-button>
+        </div>
+        <g-button>更多</g-button>
+        <g-button icon="right" icon-position="right">下一页</g-button>
+    </g-button-group>
+    <div style="margin: 20px">
+        <g-input v-model="message"></g-input>
+        <div>
+            {{message}}
+        </div>
+        <g-input disabled value="梁璐"></g-input>
+        <g-input readonly value="梁兆璋"></g-input>
+        <g-input error="出错了"></g-input>
+        <!--    </div>-->
+    </div>
 </div>
 
 <script src="src/app.js">
 </script>
 <script src="//at.alicdn.com/t/font_1783749_9iie61gf7ue.js"></script>
+
 </body>
 </html>

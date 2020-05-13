@@ -3,15 +3,18 @@
         <use :xlink:href="`#icon-${name}`"></use>
     </svg>
 
+
 </template>
 
 <script>
+    import './svg'
     export default {
         props: {
             name: {}
         }
     }
 </script>
+
 <style>
     .g-icon {
         width: 1em;

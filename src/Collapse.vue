@@ -17,6 +17,10 @@
         props: {
             selected: {
                 type: String
+            },
+            single: {
+                type: Boolean,
+                default: false
             }
 
         },
@@ -31,6 +35,10 @@
             this.eventBus.$emit('update:selected', this.selected)
             this.eventBus.$on('update:selected', (name) => {
                 this.$emit('update:selected', name)
+            })
+            this.$children.forEach((vm) => {
+                vm.single = this.single
+
             })
         }
     }

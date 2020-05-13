@@ -24,7 +24,10 @@
 
         },
         data() {
-            return {open: false}
+            return {
+                open: false,
+                single: false
+            }
         },
         inject: ['eventBus'],
         methods: {
@@ -47,7 +50,10 @@
             this.eventBus.$on('update:selected', (name) => {
                 console.log(name);
                 if (name !== this.name) {
-                    this.close()
+                    //this.close()
+                    if (this.single) {
+                        this.close()
+                    }
                 } else {
                     console.log('name===name');
                     this.show()
