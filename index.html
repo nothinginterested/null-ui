@@ -107,6 +107,14 @@
         </g-popover>
     </div>
 
+    <g-collapse :selected.sync="selected">
+        <g-collapse-item title="标题一" name="1">内容一</g-collapse-item>
+        <g-collapse-item title="标题二" name="2">内容二</g-collapse-item>
+        <g-collapse-item title="标题三" name="3">内容三</g-collapse-item>
+    </g-collapse>
+    {{selected}}
+
+
     <!--    <div style="border: 1px solid black;">-->
     <!--        <g-row n-length="20">-->
     <!--            <g-col span="8" :phone="{span:20}"-->

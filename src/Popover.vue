@@ -66,7 +66,6 @@
             Onclick(event) {
 
                 if (this.$refs.Trigger.contains(event.target)) {
-                    console.log(event.target);
                     this.Visible = !this.Visible
                     if (this.Visible === true) {
                         this.$nextTick(() => {

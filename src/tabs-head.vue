@@ -21,7 +21,6 @@
             // console.log('爷爷给爸爸的');
             // console.log(this.eventBus);
             this.eventBus.$on('update:selected', (item, vm) => {
-                console.log(vm.$el);
                 let {width} = vm.$el.getBoundingClientRect()
                 let left = vm.$el.offsetLeft
 
