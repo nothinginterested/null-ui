@@ -14,7 +14,7 @@ import TabsBody from './tabs-body'
 import Popover from './Popover'
 import Collapse from "./Collapse";
 import CollapseItem from './Collapse-item'
-
+import Cascader from './cascader'
 Vue.component('g-button', Button);
 Vue.component('g-icon', Icon)
 Vue.component('g-button-group', ButtonGroup)
@@ -29,6 +29,7 @@ Vue.component('g-tabs-item', TabsItem)
 Vue.component('g-popover', Popover)
 Vue.component('g-collapse', Collapse)
 Vue.component('g-collapse-item', CollapseItem)
+Vue.component('g-cascader', Cascader)
 Vue.use(Plugin);
 new Vue({
     el: '#app',
@@ -37,34 +38,26 @@ new Vue({
         loading1: false,
         selectedTab: 'man',
         selected: '1',
-        single: true
-    },
-    mounted() {
+        single: true,
+        data: [
+            {
+                value: '广东',
+                children: [{
+                    value: '珠海',
+                    children: [{
+                        value: '香洲'
+                    }]
+                }]
+            },
+            {
+                value: '浙江',
+                children: [{
+                    value: '杭州'
+                }]
+            }
+        ]
 
-    },
-    methods: {
-        yyy() {
-            console.log('yyy');
-        },
-        showToast1() {
-            this.showToast('middle')
-        },
-        showToast2() {
-            this.showToast('bottom')
-        },
-        showToast(pos) {
-            console.log('lala');
-            this.$toast('知道了知道了', {
-                closeButton: {
-                    text: '知道了知道',
-                    callback: () => {
-                        console.log('发生回调');
-                    },
 
-                }, position: pos,
-                autoClose: false
-            })
-        }
     }
 
 

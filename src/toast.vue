@@ -22,7 +22,6 @@
                 type: Object,
                 default() {
                     return {
-                        text: 'lllll',
                         callback: () => {
                             console.log('回调成功');
                         }
@@ -73,7 +72,7 @@
 
 
 <style lang="scss" scoped>
-    $font-size: 14px;
+    $font-size: 12px;
     $toast-min-height: 40px;
     $toast-bg: rgba(0, 0, 0, 0.75);
     @keyframes slide-up {
@@ -92,7 +91,6 @@
         0% {
             opacity: 0;
             transform: translateY(-100%);
-
         }
         100% {
             opacity: 100%;
@@ -111,7 +109,6 @@
 
     .wrapper {
         position: fixed;
-
         left: 50%;
         transform: translateX(-50%);
 
@@ -130,7 +127,7 @@
             transform: translateY(-50%) translateX(-50%);
 
             .toast {
-                animation: fade-in 300ms;
+                animation: fade-in .5s;
             }
         }
 

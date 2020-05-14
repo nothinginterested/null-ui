@@ -41,73 +41,62 @@
 <div id="app">
 
 
-    <g-button icon="error" icon-position="right" disabled>fuck</g-button>
-    <div class="toast" style="margin: 20px">
-        <g-button @click="showToast">展示Toast</g-button>
-    </div>
-    <div class="toast" style="margin: 20px">
-        <g-button @click="showToast1">展示Toast</g-button>
-    </div>
-    <div class="toast" style="margin: 20px">
-        <g-button @click="showToast2">展示Toast</g-button>
-    </div>
-
-    <g-tabs :selected.sync="selectedTab">
-        <g-tabs-head>
-            <template slot="action">
-                <g-button>设置</g-button>
-            </template>
-            <g-tabs-item name="woman">
-                <g-icon name="setting"></g-icon>
-                woman
-            </g-tabs-item>
-            <g-tabs-item name="man" disabled>
-                man
-            </g-tabs-item>
-            <g-tabs-item name="fuck">
-                fuck
-            </g-tabs-item>
-        </g-tabs-head>
-        <g-tabs-body>
-            <g-tabs-pane name="woman">
-                woman相关
-            </g-tabs-pane>
-            <g-tabs-pane name="man">
-                man相关
-            </g-tabs-pane>
-            <g-tabs-pane name="fuck">
-                fuck相关
-            </g-tabs-pane>
-        </g-tabs-body>
-    </g-tabs>
+    <!--    <g-tabs :selected.sync="selectedTab" direction="vertical">-->
+    <!--        <g-tabs-head>-->
+    <!--            <template slot="action">-->
+    <!--                <g-button>设置</g-button>-->
+    <!--            </template>-->
+    <!--            <g-tabs-item name="woman">-->
+    <!--                <g-icon name="setting"></g-icon>-->
+    <!--                woman-->
+    <!--            </g-tabs-item>-->
+    <!--            <g-tabs-item name="man" disabled>-->
+    <!--                man-->
+    <!--            </g-tabs-item>-->
+    <!--            <g-tabs-item name="fuck">-->
+    <!--                fuck-->
+    <!--            </g-tabs-item>-->
+    <!--        </g-tabs-head>-->
+    <!--        <g-tabs-body>-->
+    <!--            <g-tabs-pane name="woman">-->
+    <!--                woman相关-->
+    <!--            </g-tabs-pane>-->
+    <!--            <g-tabs-pane name="man">-->
+    <!--                man相关-->
+    <!--            </g-tabs-pane>-->
+    <!--            <g-tabs-pane name="fuck">-->
+    <!--                fuck相关-->
+    <!--            </g-tabs-pane>-->
+    <!--        </g-tabs-body>-->
+    <!--    </g-tabs>-->
 
 
-    <div style=" overflow: hidden; margin: 30px;" @click="yyy">
-        <g-popover position="top">
-            <template slot="content">
-                <div>sldfslkflknewfjbwnweguwehgiwejgiwhgiiioqhgi</div>
-            </template>
-            <g-button>点我</g-button>
-        </g-popover>
-        <g-popover position="bottom">
-            <template slot="content">
-                <div>这是Popover2的内容</div>
-            </template>
-            <g-button>cao我</g-button>
-        </g-popover>
-        <g-popover position="left">
-            <template slot="content">
-                <div>这是Popover2的内容</div>
-            </template>
-            <g-button>cao我</g-button>
-        </g-popover>
-        <g-popover position="right">
-            <template slot="content">
-                <div>这是Popover2的内容</div>
-            </template>
-            <g-button>cao我</g-button>
-        </g-popover>
-    </div>
+    <!--    <div style=" overflow: hidden; margin: 30px;" @click="yyy">-->
+    <!--        <g-popover position="top">-->
+    <!--            <template slot="content">-->
+    <!--                <div>sldfslkflknewfjbwnweguwehgiwejgiwhgiiioqhgi</div>-->
+    <!--            </template>-->
+    <!--            <g-button>点我</g-button>-->
+    <!--        </g-popover>-->
+    <!--        <g-popover position="bottom">-->
+    <!--            <template slot="content">-->
+    <!--                <div>这是Popover2的内容</div>-->
+    <!--            </template>-->
+    <!--            <g-button>cao我</g-button>-->
+    <!--        </g-popover>-->
+    <!--        <g-popover position="left">-->
+    <!--            <template slot="content">-->
+    <!--                <div>这是Popover2的内容</div>-->
+    <!--            </template>-->
+    <!--            <g-button>cao我</g-button>-->
+    <!--        </g-popover>-->
+    <!--        <g-popover position="right">-->
+    <!--            <template slot="content">-->
+    <!--                <div>这是Popover2的内容</div>-->
+    <!--            </template>-->
+    <!--            <g-button>cao我</g-button>-->
+    <!--        </g-popover>-->
+    <!--    </div>-->
 
     <g-collapse :selected.sync="selected" single>
         <g-collapse-item title="标题一" name="1">内容一</g-collapse-item>
@@ -117,57 +106,15 @@
     {{selected}}
 
 
-    <!--    <div style="border: 1px solid black;">-->
-    <!--        <g-row n-length="20">-->
-    <!--            <g-col span="8" :phone="{span:20}"-->
-    <!--                   :ipad="{span:18}" :narrow-pc="{span:16}" :pc="{span:14}">2-->
-    <!--            </g-col>-->
-    <!--            <g-col span="2" :phone="{span:2}"-->
-    <!--                   :ipad="{span:3}" :narrow-pc="{span:4}" :pc="{span:5}">2-->
-    <!--            </g-col>-->
-    <!--            <g-col span="12"-->
-    <!--                   :ipad="{span:3}" :narrow-pc="{span:4}" :pc="{span:5}">2-->
-    <!--            </g-col>-->
-    <!--        </g-row>-->
-    <!--        &lt;!&ndash;        <g-row n-length="20">&ndash;&gt;-->
-    <!--        &lt;!&ndash;            <g-col span="8">1</g-col>&ndash;&gt;-->
-    <!--        &lt;!&ndash;            <g-col span="8">2</g-col>&ndash;&gt;-->
-    <!--        &lt;!&ndash;            <g-col span="8">2</g-col>&ndash;&gt;-->
-    <!--        &lt;!&ndash;        </g-row>&ndash;&gt;-->
-    <!--        &lt;!&ndash;        <g-row n-length="20">&ndash;&gt;-->
-    <!--        &lt;!&ndash;            <g-col span="10">1</g-col>&ndash;&gt;-->
-    <!--        &lt;!&ndash;            <g-col span="10">2</g-col>&ndash;&gt;-->
-    <!--        &lt;!&ndash;            <g-col span="4">2</g-col>&ndash;&gt;-->
-    <!--        &lt;!&ndash;        </g-row>&ndash;&gt;-->
+    <g-cascader :source="data">
+
+    </g-cascader>
 
 
-    <!--    </div>-->
-
-    <g-button icon="setting" :loading="loading1" @click="loading1=!loading1" icon-position="right">按钮</g-button>
-    <g-button icon="setting" :loading="true">按钮</g-button>
-    <g-button icon="setting" icon-position="right">按钮</g-button>
-    <g-button-group>
-        <div>
-            <g-button icon="left">上一页</g-button>
-        </div>
-        <g-button>更多</g-button>
-        <g-button icon="right" icon-position="right">下一页</g-button>
-    </g-button-group>
-    <div style="margin: 20px">
-        <g-input v-model="message"></g-input>
-        <div>
-            {{message}}
-        </div>
-        <g-input disabled value="梁璐"></g-input>
-        <g-input readonly value="梁兆璋"></g-input>
-        <g-input error="出错了"></g-input>
-        <!--    </div>-->
-    </div>
 </div>
 
 <script src="src/app.js">
 </script>
-<script src="//at.alicdn.com/t/font_1783749_9iie61gf7ue.js"></script>
 
 </body>
 </html>

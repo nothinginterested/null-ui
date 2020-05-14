@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper" :class="{error}">
-        <input type="text" :value="value" :disabled="disabled" class="{disabled,readonly}" :readonly="readonly"
+        <input type="text" :value="value" :disabled='disabled' class="{disabled,readonly}" :readonly="readonly"
                @focus="$emit('focus',$event.target.value)"
                @blur="$emit('blur',$event.target.value)"
                @change="$emit('change',$event.target.value)"
