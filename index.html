@@ -40,75 +40,45 @@
 <body>
 <div id="app">
 
+    <div>
+        <g-tabs :selected.sync="selectedTab">
+            <g-tabs-head>
+                <template slot="action">
+                    <g-button>设置</g-button>
+                </template>
+                <g-tabs-item name="woman">
+                    woman
+                </g-tabs-item>
+                <g-tabs-item name="man" disabled>
+                    man
+                </g-tabs-item>
+                <g-tabs-item name="fuck">
+                    fuck
+                </g-tabs-item>
+            </g-tabs-head>
+            <g-tabs-body>
+                <g-tabs-pane name="woman">
+                    woman相关
+                </g-tabs-pane>
+                <g-tabs-pane name="man">
+                    man相关
+                </g-tabs-pane>
+                <g-tabs-pane name="fuck">
+                    fuck相关
+                </g-tabs-pane>
+            </g-tabs-body>
+        </g-tabs>
 
-    <!--    <g-tabs :selected.sync="selectedTab" direction="vertical">-->
-    <!--        <g-tabs-head>-->
-    <!--            <template slot="action">-->
-    <!--                <g-button>设置</g-button>-->
-    <!--            </template>-->
-    <!--            <g-tabs-item name="woman">-->
-    <!--                <g-icon name="setting"></g-icon>-->
-    <!--                woman-->
-    <!--            </g-tabs-item>-->
-    <!--            <g-tabs-item name="man" disabled>-->
-    <!--                man-->
-    <!--            </g-tabs-item>-->
-    <!--            <g-tabs-item name="fuck">-->
-    <!--                fuck-->
-    <!--            </g-tabs-item>-->
-    <!--        </g-tabs-head>-->
-    <!--        <g-tabs-body>-->
-    <!--            <g-tabs-pane name="woman">-->
-    <!--                woman相关-->
-    <!--            </g-tabs-pane>-->
-    <!--            <g-tabs-pane name="man">-->
-    <!--                man相关-->
-    <!--            </g-tabs-pane>-->
-    <!--            <g-tabs-pane name="fuck">-->
-    <!--                fuck相关-->
-    <!--            </g-tabs-pane>-->
-    <!--        </g-tabs-body>-->
-    <!--    </g-tabs>-->
-
-
-    <!--    <div style=" overflow: hidden; margin: 30px;" @click="yyy">-->
-    <!--        <g-popover position="top">-->
-    <!--            <template slot="content">-->
-    <!--                <div>sldfslkflknewfjbwnweguwehgiwejgiwhgiiioqhgi</div>-->
-    <!--            </template>-->
-    <!--            <g-button>点我</g-button>-->
-    <!--        </g-popover>-->
-    <!--        <g-popover position="bottom">-->
-    <!--            <template slot="content">-->
-    <!--                <div>这是Popover2的内容</div>-->
-    <!--            </template>-->
-    <!--            <g-button>cao我</g-button>-->
-    <!--        </g-popover>-->
-    <!--        <g-popover position="left">-->
-    <!--            <template slot="content">-->
-    <!--                <div>这是Popover2的内容</div>-->
-    <!--            </template>-->
-    <!--            <g-button>cao我</g-button>-->
-    <!--        </g-popover>-->
-    <!--        <g-popover position="right">-->
-    <!--            <template slot="content">-->
-    <!--                <div>这是Popover2的内容</div>-->
-    <!--            </template>-->
-    <!--            <g-button>cao我</g-button>-->
-    <!--        </g-popover>-->
-    <!--    </div>-->
-
-    <g-collapse :selected.sync="selected" single>
-        <g-collapse-item title="标题一" name="1">内容一</g-collapse-item>
-        <g-collapse-item title="标题二" name="2">内容二</g-collapse-item>
-        <g-collapse-item title="标题三" name="3">内容三</g-collapse-item>
-    </g-collapse>
-    {{selected}}
+    </div>
 
 
-    <g-cascader :source="data">
+    <!--    <g-collapse :selected.sync="selected" single>-->
+    <!--        <g-collapse-item title="标题一" name="1">内容一</g-collapse-item>-->
+    <!--        <g-collapse-item title="标题二" name="2">内容二</g-collapse-item>-->
+    <!--        <g-collapse-item title="标题三" name="3">内容三</g-collapse-item>-->
+    <!--    </g-collapse>-->
 
-    </g-cascader>
+
 
 
 </div>

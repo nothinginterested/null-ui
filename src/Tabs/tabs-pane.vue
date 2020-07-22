@@ -13,13 +13,7 @@
         inject: ['eventBus'],
         mounted() {
             this.eventBus.$on('update:selected', (name) => {
-                if (name === this.name) {
-                    this.active = true
-
-                } else {
-
-                    this.active = false
-                }
+                this.active = name === this.name;
             })
 
 
@@ -49,8 +43,12 @@
 
 
 <style lang="scss" scoped>
+    $tabs-box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.15);
+    $tabs-border-color: #d9d9d9;
     .tabsPane {
-        padding: 0 1em;
+        padding: 1em 2em;
+        box-shadow: $tabs-box-shadow-base;
+        border: 1px solid $tabs-border-color;
 
         &.active {
         }

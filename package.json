@@ -7,7 +7,7 @@
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-minify && karma start --single-run",
     "start": "parcel index.html --no-cache",
-    "docs:dev": "vuepress dev docs",
+    "docs:dev": "vuepress dev docs --temp .temp",
     "docs:build": "vuepress build docs"
   },
   "repository": {
@@ -25,8 +25,12 @@
   },
   "homepage": "https://github.com/nothinginterested/null-ui#readme",
   "dependencies": {
+    "@types/vue": "^2.0.0",
+    "cropperjs": "^1.5.7",
+    "element-ui": "^2.13.2",
     "git-open": "^2.1.0",
     "global": "^4.4.0",
+    "portal-vue": "^2.1.7",
     "vue": "^2.5.17",
     "vue-hot-reload-api": "^2.3.4"
   },
