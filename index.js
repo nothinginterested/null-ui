@@ -4,6 +4,10 @@ import ButtonGroup from './src/button-group'
 
 
 
-export {
-    ButtonGroup,Button,Icon
+export default {
+    install(Vue) {
+        Vue.component('GButton', Button)
+
+    }
+    // ButtonGroup,Button,Icon
 }

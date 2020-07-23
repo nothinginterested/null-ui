@@ -1,14 +1,40 @@
 module.exports = {
-    title: 'NULL UI',
+  base: '/NULL/',
+  title: 'NULL UI',
+  extend: '@vuepress/theme-default',
+  themeConfig: {
+    lastUpdated: '最后更新时间',
+    smoothScroll: true,
+    nav: [
+      {text: '主页', link: '/'},
+      {text: '文档', link: '/docs/'},
 
-    themeConfig: {
-        nav: [
-            {text: 'Home', link: '/'},
-            {text: 'Guide', link: '/guide/'},
-            {text: 'External', link: 'https://google.com'},
-        ],
-        sidebar: [
-            ['/start/', '入门']
-        ]
+    ],
+    sidebar: {
+      '/docs/': [
+        '',
+        {
+          title: '入门',
+          collapsable: false,
+          children: [
+            './get-start/start'
+          ]
+
+        },
+        {
+          title: '基础组件',
+          collapsable: false,
+          children: [
+            './components/button'
+
+          ]
+        },
+        {
+          title: '表单组件',
+          collapsable: false,
+        }
+
+      ]
     }
+  }
 }
