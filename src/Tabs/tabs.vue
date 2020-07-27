@@ -38,12 +38,13 @@
             this.$children.forEach((vm) => {
                 if (vm.$options.name === 'NullTabsHead') {
                     vm.$children.forEach((item) => {
-                        // console.log(this.selected);
-                        if (item.$options.name === 'g-tabs-item' && item.name === this.selected) {
-                            this.eventBus.$emit('update:selected', this.selected, item)
+                      console.log(this.selected);
+                      console.log(item.$options.name);
+                      if (item.$options.name === 'l-tabs-item' && item.name === this.selected) {
+                        this.eventBus.$emit('update:selected', this.selected, item)
 
 
-                        }
+                      }
                     })
                 }
             })

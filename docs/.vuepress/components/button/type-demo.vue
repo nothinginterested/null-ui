@@ -1,6 +1,6 @@
 <template>
 
-    <g-button type="primary">Primary</g-button>
+    <l-button type="primary">Primary</l-button>
 
 </template>
 

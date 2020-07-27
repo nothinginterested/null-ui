@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/NULL/',
+  base: '/null-ui/',
   title: 'NULL UI',
   extend: '@vuepress/theme-default',
   themeConfig: {
@@ -30,8 +30,9 @@ module.exports = {
           ]
         },
         {
-          title: '表单组件',
+          title: '数据展示',
           collapsable: false,
+          children: ['./components/tabs']
         }
 
       ]
