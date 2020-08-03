@@ -16,7 +16,10 @@ import Collapse from "./Collapse";
 import CollapseItem from './Collapse-item'
 import Cascader from './cascader'
 import Register from "./Register";
+import Switch from './Switch/Switch'
+import './index.scss'
 
+Vue.component('g-switch', Switch)
 Vue.component('g-button', Button);
 Vue.component('g-icon', Icon)
 Vue.component('g-button-group', ButtonGroup)
@@ -46,31 +49,7 @@ new Vue({
         selectedTab: 'man',
         selected: '1',
         single: true,
-        data: [
-            {
-                value: '广东',
-                children: [{
-                    value: '珠海',
-                    children: [{
-                        value: '香洲'
-                    }]
-                }, {
-                    value: 'Guangzhou',
-                    children: [{
-                        value: '天河'
-                    }]
-                }]
-            },
-            {
-                value: '浙江',
-                children: [{
-                    value: '杭州'
-                }, {
-                    value: '金华'
-                }]
-            }
-        ]
-
+        value: false
 
     }
 
