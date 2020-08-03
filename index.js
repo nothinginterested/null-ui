@@ -6,6 +6,7 @@ import TabsItem from './src/Tabs/tabs-item'
 import TabsPane from './src/Tabs/tabs-pane'
 import TabsBody from './src/Tabs/tabs-body'
 import Tabs from './src/Tabs/tabs'
+import Switch from "./src/Switch/Switch";
 
 export default {
     install(Vue) {
@@ -15,6 +16,7 @@ export default {
         Vue.component('l-tabs-item', TabsItem)
         Vue.component('l-tabs-body', TabsBody)
         Vue.component('l-tabs-pane', TabsPane)
+        Vue.component('l-switch', Switch)
 
     }
 }

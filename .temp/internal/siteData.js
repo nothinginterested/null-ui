@@ -38,6 +38,52 @@ export const siteData = {
       "lastUpdated": "7/23/2020, 2:44:03 PM"
     },
     {
+      "title": "快速上手",
+      "frontmatter": {
+        "0": "t",
+        "1": "i",
+        "2": "t",
+        "3": "l",
+        "4": "e",
+        "5": ":",
+        "6": "入",
+        "7": "门"
+      },
+      "regularPath": "/docs/get-start/start.html",
+      "relativePath": "docs/get-start/start.md",
+      "key": "v-78ceb5aa",
+      "path": "/docs/get-start/start.html",
+      "lastUpdated": "7/23/2020, 2:44:03 PM"
+    },
+    {
+      "title": "Switch",
+      "frontmatter": {
+        "0": "t",
+        "1": "i",
+        "2": "t",
+        "3": "l",
+        "4": "e",
+        "5": ":",
+        "6": "s",
+        "7": "w",
+        "8": "i",
+        "9": "t",
+        "10": "c",
+        "11": "h"
+      },
+      "regularPath": "/docs/components/switch.html",
+      "relativePath": "docs/components/switch.md",
+      "key": "v-4fef080d",
+      "path": "/docs/components/switch.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "基本用法",
+          "slug": "基本用法"
+        }
+      ]
+    },
+    {
       "title": "Button 按钮",
       "frontmatter": {
         "0": "t",
@@ -92,24 +138,6 @@ export const siteData = {
         }
       ],
       "lastUpdated": "7/27/2020, 4:26:27 PM"
-    },
-    {
-      "title": "快速上手",
-      "frontmatter": {
-        "0": "t",
-        "1": "i",
-        "2": "t",
-        "3": "l",
-        "4": "e",
-        "5": ":",
-        "6": "入",
-        "7": "门"
-      },
-      "regularPath": "/docs/get-start/start.html",
-      "relativePath": "docs/get-start/start.md",
-      "key": "v-78ceb5aa",
-      "path": "/docs/get-start/start.html",
-      "lastUpdated": "7/23/2020, 2:44:03 PM"
     }
   ],
   "themeConfig": {
@@ -139,7 +167,8 @@ export const siteData = {
           "title": "基础组件",
           "collapsable": false,
           "children": [
-            "./components/button"
+            "./components/button",
+            "./components/switch"
           ]
         },
         {

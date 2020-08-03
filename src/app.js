@@ -18,7 +18,7 @@ import Cascader from './cascader'
 import Register from "./Register";
 import Switch from './Switch/Switch'
 import './index.scss'
-
+Vue.component('demoPage', Democode)
 Vue.component('g-switch', Switch)
 Vue.component('g-button', Button);
 Vue.component('g-icon', Icon)
@@ -38,6 +38,7 @@ Vue.component('g-cascader', Cascader)
 Vue.component('g-register', Register)
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import Democode from "./Democode";
 
 Vue.use(ElementUI)
 Vue.use(Plugin);

@@ -14,8 +14,8 @@ title:Button
   <highlight-code slot="codeText" lang="vue">
     <template>
       <div>
-        <g-button type="primary">Primary</g-button>
-        <g-button>Default</g-button>
+        <l-button type="primary">Primary</l-button>
+        <l-button>Default</l-button>
       </div>
     </template>
   </highlight-code>

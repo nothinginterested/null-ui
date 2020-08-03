@@ -40,6 +40,10 @@ button:active {
   outline: none;
 }
 
+button:focus {
+  outline: none;
+}
+
 span {
   height: $h2;
   width: $h2;

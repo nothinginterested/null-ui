@@ -4,7 +4,8 @@
 export default {
   "v-302f38c8": () => import("/Users/lzz/Desktop/null-wheel/docs/README.md"),
   "v-2413ea50": () => import("/Users/lzz/Desktop/null-wheel/docs/docs/README.md"),
+  "v-78ceb5aa": () => import("/Users/lzz/Desktop/null-wheel/docs/docs/get-start/start.md"),
+  "v-4fef080d": () => import("/Users/lzz/Desktop/null-wheel/docs/docs/components/switch.md"),
   "v-97e011de": () => import("/Users/lzz/Desktop/null-wheel/docs/docs/components/button.md"),
-  "v-47208a8e": () => import("/Users/lzz/Desktop/null-wheel/docs/docs/components/tabs.md"),
-  "v-78ceb5aa": () => import("/Users/lzz/Desktop/null-wheel/docs/docs/get-start/start.md")
+  "v-47208a8e": () => import("/Users/lzz/Desktop/null-wheel/docs/docs/components/tabs.md")
 }
