@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{570:function(e,a,l){"use strict";l.r(a);var n={name:"Switch",data:()=>({value:!1})},t=l(1),c=Object(t.a)(n,(function(){var e=this,a=e.$createElement;return(e._self._c||a)("l-switch",{model:{value:e.value,callback:function(a){e.value=a},expression:"value"}})}),[],!1,null,"05e14b3c",null);a.default=c.exports}}]);
