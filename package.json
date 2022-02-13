@@ -41,7 +41,7 @@
     "chai": "^4.2.0",
     "clipboard": "^2.0.6",
     "highlight.js": "^9.18.1",
-    "karma": "^5.0.2",
+    "karma": "^6.3.14",
     "karma-chai": "^0.1.0",
     "karma-chai-spies": "^0.1.4",
     "karma-chrome-launcher": "^3.1.0",
